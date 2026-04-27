@@ -519,3 +519,29 @@ ANSWER: “Affect” is primarily a verb meaning to influence or alter something
 QUESTION: What are the stages of formation, key physical properties, and scientific significance of supernova remnants in the interstellar medium?
 ANSWER: A supernova remnant (SNR) is the expanding, shock‑heated shell of gas and dust ejected when a star much larger than the Sun explodes or a white dwarf in a binary system accretes enough material to trigger a thermonuclear runaway. The formation begins with a supernova explosion that releases ∼10^44–10^46 joules of energy, propelling ejecta at initial velocities of 5,000–20,000 km s^−1. As the ejecta collide with the surrounding interstellar medium (ISM), a two‑shock structure develops: the forward shock plows into the ISM, heating it to temperatures of 10^6–10^8 K, while a reverse shock moves inward, heating the interior metal‑rich ejecta to 10^8–10^9 K. The size of an SNR grows roughly linearly with time during the free‑expansion phase, then decelerates once it sweeps up an amount of ISM comparable to its own mass, entering a Sedov–Taylor phase where the radius R ≈ 1.15 (E_51/ρ_0)^0.2 t^0.4 (with E_51 the energy in units of 10^51 erg, ρ_0 the ISM mass density, and t the age in years). The Crab Nebula (age ~1,000 yr, diameter 4 pc) and Cassiopeia A (age ~340 yr, diameter 4.5 pc) are classic examples, exhibiting synchrotron radio emission from relativistic electrons spiraling in magnetic fields of ∼0.3–1 mG. SNRs play a pivotal role as cosmic‑ray accelerators, providing sites where diffusive shock acceleration can boost particles to energies exceeding 10^15 eV; this is inferred from the detection of non‑thermal X‑ray filaments and γ‑ray emission in several remnants (e.g., Tycho, SN 1006). Additionally, they enrich the ISM with heavy elements synthesized in the progenitor, seeding future generations of stars and planets, and their shock fronts trigger star formation by compressing nearby molecular clouds.
 ---
+
+[ENTRY 00003] [AGENT: math] [TOPIC: Summation, Polynomial Series] [DIFFICULTY: intermediate] [TAGS: summation, algebra, induction, polynomial, combinatorics]
+QUESTION: Compute the sum \(S_n = 1^2 + 3^2 + 5^2 + \dots + (2n-1)^2\) for a positive integer \(n\). Provide a step-by-step derivation of a closed‑form formula and discuss how the result can be generalized to sums of the form \(\sum_{k=1}^{n}(2k-1)^p\) for integer exponents \(p \ge 1\).
+ANSWER: First note that the term \((2k-1)^2\) expands to \(4k^2 - 4k + 1\). Hence
+\[
+S_n=\sum_{k=1}^{n}\bigl(4k^2-4k+1\bigr)=4\sum_{k=1}^{n}k^2-4\sum_{k=1}^{n}k+\sum_{k=1}^{n}1.
+\]
+Using the standard formulas \(\sum_{k=1}^{n}k = \frac{n(n+1)}{2}\), \(\sum_{k=1}^{n}k^2 = \frac{n(n+1)(2n+1)}{6}\), and \(\sum_{k=1}^{n}1 = n\), we obtain
+\[
+S_n = 4\cdot\frac{n(n+1)(2n+1)}{6} - 4\cdot\frac{n(n+1)}{2} + n
+= \frac{2n(n+1)(2n+1)}{3} - 2n(n+1) + n.
+\]
+Factor \(n\) out:
+\[
+S_n = n\left[\frac{2(n+1)(2n+1)}{3} - 2(n+1) + 1\right]
+= n\left[\frac{2(2n^2+3n+1)}{3} - \frac{6n+6}{3} + \frac{3}{3}\right].
+\]
+Simplify inside the brackets to obtain
+\[
+S_n = n\left[\frac{4n^2+6n+2 - 6n - 6 + 3}{3}\right]
+= n\left[\frac{4n^2 - 1}{3}\right]
+= \frac{n(2n-1)(2n+1)}{3}.
+\]
+Thus the closed form is \(S_n = \dfrac{n(2n-1)(2n+1)}{3}\). A check for small \(n\) confirms the formula: for \(n=1\), \(S_1=1\); for \(n=2\), \(S_2=1+9=10\), and the formula gives \(\frac{2\cdot3\cdot5}{3}=10\).  
+For generalization, the sum \(\sum_{k=1}^{n}(2k-1)^p\) can be expressed as a polynomial of degree \(p+1\) in \(n\) by expanding \((2k-1)^p\) via the binomial theorem and summing each resulting polynomial term using Faulhaber's formula for sums of powers. For example, for \(p=3\) we get \(\sum_{k=1}^{n}(2k-1)^3 = \frac{n^2(2n^2-1)}{2}\). This approach works for any integer exponent \(p\) and yields a closed‑form expression involving Bernoulli numbers.
+---
