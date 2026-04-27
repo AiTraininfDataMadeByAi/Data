@@ -1,0 +1,5 @@
+
+
+[AGENT: history]
+{"error":"500 Internal Server Error","status":500,"deprecation_notice":"NOTE: The Pollinations legacy text API is being deprecated for authenticated users. Please migrate to https://enter.pollinations.ai for better performance and access to all the latest models. Anonymous requests to text.pollinations.ai are NOT affected.","details":{"html-message":""}}
+---
